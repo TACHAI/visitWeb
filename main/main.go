@@ -55,10 +55,9 @@ func main() {
 	courseId := config["courseId"]
 	videoId := config["videoId"]
 	count,_ := strconv.Atoi(config["count"])
+	uri:=config["uri"]
+	fmt.Println("uri=",uri," areaId=",string(areaId)," courseId=",string(courseId)," videoId=",string(videoId)," count=",string(count))
 
-	fmt.Println("areaId=",string(areaId)," courseId=",string(courseId)," videoId=",string(videoId)," count=",string(count))
-
-	uri:="http://szwh.jxdcn.net/sumvideo2/api/fore/visit/visitlog"
 	for i:=0;i<count;i++{
 		resp,err:=http.PostForm(uri,url.Values{"areaId":{areaId},"courseId":{courseId},"videoId":{videoId}})
 
