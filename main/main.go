@@ -48,9 +48,11 @@ func InitConfig(path string) map[string]string {
 	}
 	return config
 }
+// go 在mac里面打包exe文件
+// CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build main.go
 
 func main() {
-	config := InitConfig("C:/Users/Administrator/Desktop/观看视频脚本/confiig.txt")
+	config := InitConfig("D:/新建文件夹/观看视频脚本/观看视频脚本/config.txt")
 	areaId := config["areaId"]
 	courseId := config["courseId"]
 	videoId := config["videoId"]
